@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+
+    <link rel="stylesheet" href="formStyle.css">
+</head>
+<body>
+    
+    <div class="container">
+        <h1 id="head">Registration Form</h1>
+        <form id="form" action="#" th:action="@{/studata}" th:object="${student}" method="post">
+            <section id="sec1">
+                <h3>Personal Information</h3>
+                <label for="username">Name :-</label>
+                <input type="text" id="username" th:field="*{username}"><br>
+
+                <label for="email">Email :-</label>
+                <input type="text" id="email" size="26" th:field="*{email}"><br>
+
+                <label for="no">Contact No :-</label>
+                <input type="text" id="no" th:field="*{no}"><br>
+
+                <label for="gender">Gender :-</label>
+                <input type="radio" id="gender" name="gender" th:field="*{gender}"> Male
+                <input type="radio" id="gender" name="gender" th:field="*{gender}"> Female <br>
+
+                <label for="dob">Date of Birth :-</label>
+                <input type="date" id="dob" name="dob" th:field="*{dob}"><br>
+
+                <button type="button" id="next1">Next</button>
+            </section>
+
+            <section id="sec2">
+                <h3>Address </h3>
+                <label for="add">Address :-</label>
+                <input type="text" id="add" th:field="*{add}"><br>
+
+                <label for="city">City :-</label>
+                <input type="text" id="city" th:field="*{city}"><br>
+
+                <label for="state">State :-</label>
+                <input type="text" id="state" th:field="*{state}"><br>
+
+                <label for="zip">Zip :-</label>
+                <input type="text" id="dob" name="zip" th:field="*{zip}"><br>
+
+                <button type="button" id="back1">Back</button>
+                <button type="button" id="next2">Next</button>
+            </section>
+
+            <section id="sec3">
+                <h3 id="head1">Academic details </h3>
+
+                <p><b>Post Graduation</b></p>
+                <label for="pguni">Institution :- </label>
+                <input type="text" id="pguni" th:field="*{pguni}"><br>
+                <label for="pgyop">Passing Year:- </label>
+                <input type="text" id="pgyop" size="1" th:field="*{pgyop}">
+                <label for="pggrade">Grade:- </label>
+                <input type="text" id="pggrade" size="1" th:field="*{pggrade}"><br>
+
+                <p><b>Under Graduation</b></p>
+                <label for="uguni">Institution :- </label>
+                <input type="text" id="uguni" th:field="*{uguni}"><br>
+                <label for="ugyop">Passing Year:- </label>
+                <input type="text" id="ugyop" size="1" th:field="*{ugyop}">
+                <label for="uggrade">Grade:- </label>
+                <input type="text" id="uggrade" size="1" th:field="*{uggrade}"><br>
+
+                <p><b>Higher Secondary Examination</b></p>
+                <label for="hsyop">Passing Year:- </label>
+                <input type="text" id="hsyop" size="1" th:field="*{hsyop}">
+                <label for="hsmarks">Marks:- </label>
+                <input type="text" id="hsmarks" size="1" th:field="*{hsmarks}"><br>
+
+                <p><b>Secondary Examination</b></p>
+                <label for="syop">Passing Year:- </label>
+                <input type="text" id="syop" size="1" th:field="*{syop}">
+                <label for="smarks">Marks:- </label>
+                <input type="text" id="smarks" size="1" th:field="*{smarks}"><br>
+
+                <button type="button" id="back2">Back</button>
+                <button type="button" id="next3">Next</button>
+            </section>
+
+            <section id="sec4">
+                <h3>Other Details </h3>
+
+                <label for="skills">skills :- </label><br>
+                <textarea name="skills" id="skills" cols="40" rows="2" th:field="*{skills}"></textarea><br><br>
+
+                <label for="hobby">Hobbies :- </label><br>
+                <textarea name="hobby" id="hobby" cols="40" rows="2" th:field="*{hobby}"></textarea><br><br>
+
+                <label for="act">Activities :- </label><br>
+                <textarea name="act" id="act" cols="40" rows="2" th:field="*{act}"></textarea>
+
+                <button type="button" id="back3">Back</button>
+                <button type="submit" id="sub">Submit</button>
+            </section>
+        </form>
+    </div>
+    
+    <script src="formScript.js"></script>
+</body>
+</html>
